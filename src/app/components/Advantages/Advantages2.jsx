@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Advantages2 = () => {
+const Advantages2 = ({ darkMode }) => {
   return (
     <div className="flex flex-col lg:flex-row">
       <div className="lg:w-1/2 order-2 lg:order-1">
@@ -10,9 +10,9 @@ const Advantages2 = () => {
         <div className="flex flex-col mt-4">
           <div className="flex items-center">
             <Image src="/assets/advantageslogo2.svg" alt="Notification Icon" width={40} height={40} />
-            <h2 className="ml-2 text-xl font-semibold">Fully Customizable</h2>
+            <h2 className={`ml-2 text-xl font-semibold ${darkMode ? 'text-white' : ''}`}>Fully Customizable</h2>
           </div>
-          <p className="mt-2 text-gray-600">
+          <p className={`mt-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
             Arcu At Dictum Sapien, Mollis. Vulputate Sit Id Acomusan, Ultricies. In Ultrices Malesuada Elit Mauris Etiam Odio. Duis Tristique Lacus, Et Blandit Viverra Nisl Velit. Sed Mattis Rhoncus, Diam Suspendisse Sit Nunc, Gravida Eu. Leotus Eget Eget Ac Dolor Neque Lorem Sapien, Suspendisse Aliquam.
           </p>
         </div>

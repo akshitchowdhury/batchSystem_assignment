@@ -28,17 +28,17 @@ export default function Home() {
           backgroundImage: `url('${darkMode ? "/assets/darkmode.svg" : "/assets/background.svg"}')`,
         }}
       >
-        <Nav />
-        <HeroSection />
-        <Features />
-        <Advantages1 />
-        <Advantages2 />
-        <Testimonial />
-        <FreqAskQstn />
+        <Nav darkMode={darkMode}/>
+        <HeroSection  darkMode={darkMode}/>
+        <Features  darkMode={darkMode}/>
+        <Advantages1 darkMode={darkMode}/>
+        <Advantages2 darkMode={darkMode}/>
+        <Testimonial darkMode={darkMode}/>
+        <FreqAskQstn darkMode={darkMode}/>
         <div className="p-20">
           <ReadyToGetStarted />
         </div>
-        <Footer />
+        <Footer darkMode={darkMode}/>
       </main>
       <button
         className="fixed bottom-4 right-4 bg-white text-black px-4 py-2 rounded-full"
