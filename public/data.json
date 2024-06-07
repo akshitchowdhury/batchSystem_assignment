@@ -1,0 +1,66 @@
+
+
+{
+    "hero": {
+      "headline": "Discover Our App",
+      "subheadline": "The best app for all your needs.",
+      "ctaButtons": [
+        {
+          "text": "Download Now",
+          "link": "/download"
+        },
+        {
+          "text": "Learn More",
+          "link": "#features"
+        }
+      ]
+    },
+   "features": [
+  {
+    "title": "Expense Tracking",
+    "description": "Keep track of your expenses effortlessly. Categorize and analyze your spending habits.",
+    "icon": "/assets/cube.svg"
+  },
+  {
+    "title": "Budget Management",
+    "description": "Set up budgets for different categories and monitor your spending to stay within your financial goals.",
+    "icon": "/assets/wheel.svg"
+  },
+  {
+    "title": "Bill Reminders",
+    "description": "Never miss a bill payment deadline. Get timely reminders for upcoming bills and due dates.",
+    "icon": "/assets/star.svg"
+  }
+ 
+]
+,
+    "testimonials": [
+      {
+        "name": "User One",
+        "feedback": "This app is fantastic! It has changed my life.",
+        "avatar": "https://i.pravatar.cc/150?img=58"
+      },
+      {
+        "name": "User Two",
+        "feedback": "I can't imagine my daily routine without this app.",
+        "avatar": "https://i.pravatar.cc/150?img=60"
+      },
+      {
+        "name": "User Three",
+        "feedback": "This App is a game changer. I use it for my day to day activities",
+        "avatar": "https://i.pravatar.cc/150?img=59"
+      }
+    ],
+    "pricing": [
+      {
+        "plan": "Basic",
+        "price": "$9.99/month",
+        "features": ["Feature A", "Feature B", "Feature C"]
+      },
+      {
+        "plan": "Premium",
+        "price": "$19.99/month",
+        "features": ["Feature A", "Feature B", "Feature C", "Feature D"]
+      }
+    ]
+  }

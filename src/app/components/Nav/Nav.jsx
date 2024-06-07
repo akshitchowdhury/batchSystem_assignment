@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 
 const Navbar = ({ darkMode }) => {
@@ -8,8 +8,22 @@ const Navbar = ({ darkMode }) => {
     setIsOpen(!isOpen);
   };
 
+
+  const heroRef = useRef(null);
+    const advantageRef = useRef(null);
+    const featuresRef = useRef(null);
+    const pricingRef = useRef(null);
+    
+    const contactRef = useRef(null);
+    const handleClick = (ref) => {
+        ref.current.scrollIntoView({ behavior: 'smooth' });
+      };
+
   return (
-    <nav className={`${darkMode ? 'bg-black' : 'bg-white'} pt-10 shadow-md`} style={{ backgroundImage: darkMode ? "url('/assets/darkmode.svg')" : 'none' }}>
+    <nav className={`${darkMode ? 'bg-black' : 'bg-white'} pt-10 shadow-md`} style={{
+      transition: 'background-image 300ms ease-in-out',
+      backgroundImage: `url('${darkMode ? "/assets/darkmode.svg" : "/assets/background.svg"}')`,
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex items-center">
         <div className='flex items-center'>
@@ -17,16 +31,16 @@ const Navbar = ({ darkMode }) => {
                 <p className={`text-${darkMode ? 'white' : 'black'} text-2xl font-bold`}>uifry</p>
               </div>
           <div className={`hidden md:flex ml-10 space-x-8 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            <Link href="/" legacyBehavior>
+            <Link href="/" legacyBehavior onClick={() => handleClick(heroRef)}>
               <a>Home</a>
             </Link>
-            <Link href="/about" legacyBehavior>
+            <Link href="/advantages" legacyBehavior onClick={() => handleClick(advantageRef)}>
               <a>About Us</a>
             </Link>
-            <Link href="/pricing" legacyBehavior>
+            <Link href="/pricing" legacyBehavior onClick={() => handleClick(pricingRef)}>
               <a>Pricing</a>
             </Link>
-            <Link href="/features" legacyBehavior>
+            <Link href="/features" legacyBehavior onClick={() => handleClick(featuresRef)}>
               <a>Features</a>
             </Link>
           </div>

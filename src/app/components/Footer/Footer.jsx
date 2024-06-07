@@ -4,7 +4,10 @@ const Footer = ({ darkMode }) => {
   return (
     <>
     <footer className={`py-8 ${darkMode ? 'bg-black' : 'bg-white'}`} 
-    style={{ backgroundImage: darkMode ? "url('/assets/darkmode.svg')" : 'none' }}>
+    style={{
+          transition: 'background-image 300ms ease-in-out',
+          backgroundImage: `url('${darkMode ? "/assets/darkmode.svg" : "/assets/background.svg"}')`,
+        }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pl-7 py-5 lg:py-0 lg:text-left md:text-left sm:text-left text-center 
         w-full sm:w-auto flex flex-wrap justify-between 
