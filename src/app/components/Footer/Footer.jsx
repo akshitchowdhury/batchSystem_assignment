@@ -31,7 +31,7 @@ const Footer = ({ darkMode }) => {
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <img src={"/assets/mail.svg"} alt="mail" className="mr-2" />
+                  <img src={"/assets/mail.svg"} alt="mail" className="mr-2 hover:scale-125 cursor-pointer transition ease-in-out duration-300" />
                   <p
                     className={`text-[15px] ${
                       darkMode ? "text-white" : "text-black"
@@ -41,7 +41,7 @@ const Footer = ({ darkMode }) => {
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <img src={"/assets/phone.svg"} alt="call" className="mr-2" />
+                  <img src={"/assets/phone.svg"} alt="call" className="mr-2 hover:scale-125 cursor-pointer transition ease-in-out duration-300" />
                   <p
                     className={`text-[15px] ${
                       darkMode ? "text-white" : "text-black"
@@ -249,10 +249,11 @@ const Footer = ({ darkMode }) => {
                 />
                 <button
                   type="submit"
-                  className={`w-full sm:w-auto bg-black text-white py-2 px-4 rounded ${
+                  className={`w-full sm:w-auto bg-black text-white hover:bg-white
+                   hover:text-black transition duration-300  py-2 px-4 rounded ${
                     darkMode
                       ? "hover:bg-white hover:text-black"
-                      : "hover:bg-gray-900 hover:text-white"
+                      : "hover:bg-gray-900 hover:text-black"
                   }`}
                 >
                   Subscribe
