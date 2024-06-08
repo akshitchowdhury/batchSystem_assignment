@@ -1,6 +1,6 @@
-Sure! Here’s the updated README with the additional details about the libraries used in the project:
 
-## Project Name
+## Project Name: 
+UiFry Landing Page
 
 ### Instructions to Run Locally
 
