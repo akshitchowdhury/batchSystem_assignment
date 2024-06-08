@@ -1,8 +1,28 @@
-// app/components/Hero/HeroSection.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HeroSection = ({ darkMode, data }) => {
   const { headline, subheadline, ctaButtons } = data.hero;
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
+  // Close lightbox when clicking outside the image
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (event.target.id === 'lightbox') {
+        setIsLightboxOpen(false);
+      }
+    };
+
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
+  }, []);
 
   return (
     <div className="flex">
@@ -19,7 +39,7 @@ const HeroSection = ({ darkMode, data }) => {
               {ctaButtons.map((button, index) => (
                 <button
                   key={index}
-                  className={`flex items-center justify-center px-4 py-2 border rounded-md ${index === 0 ? (darkMode ? 'bg-white text-black' : 'bg-black text-white') : (darkMode ? 'bg-gray-800 text-white' : 'text-black')} md:px-3 md:py-2`}
+                  className={`flex items-center justify-center px-4 py-2 border rounded-md ${index === 0 ? (darkMode ? 'bg-white text-black hover:bg-black hover:text-white' : 'bg-black text-white hover:bg-white hover:text-black') : (darkMode ? 'bg-gray-800 text-white' : 'text-black')} md:px-3 md:py-2`}
                 >
                   {button.text} --&gt;
                 </button>
@@ -32,7 +52,30 @@ const HeroSection = ({ darkMode, data }) => {
         </div>
       </div>
       <div className="hidden md:block lg:block md:w-1/2 lg:w-1/2 text-white flex flex-col justify-center items-center lg:justify-start lg:items-start">
-        <img alt="herosectionright" loading="lazy" width="1600" height="800" decoding="async" data-nimg="1" src="/assets/herosectionright.svg" style={{ color: 'transparent' }} />
+        <img
+          alt="herosectionright"
+          loading="lazy"
+          width="1600"
+          height="800"
+          decoding="async"
+          data-nimg="1"
+          src="/assets/herosectionright.svg"
+          style={{ color: 'transparent', cursor: 'pointer' }}
+          onClick={openLightbox}
+        />
+      </div>
+
+      {/* Lightbox Modal */}
+      <div id="lightbox" className={`fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 transition-opacity duration-300 ${isLightboxOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <div className="relative">
+          <button onClick={closeLightbox} className="absolute top-2 right-2 text-white text-2xl">&times;</button>
+          <img
+            id="lightbox-image"
+            src="/assets/herosectionright.svg"
+            alt="herosectionright"
+            className="max-w-full max-h-full"
+          />
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const FreqAskQstn = ({ darkMode }) => {
               key={index}
               className={`p-6 hover:scale-105
               transition ease-in-out duration-300 rounded-lg shadow-lg ${
-                [1, 4, 5].includes(index) ? (darkMode ? 'bg-red-800 text-black hover:bg-red-200' : 'bg-red-500 text-white') : 
+                [1, 4, 5].includes(index) ? (darkMode ? 'bg-red-800 text-black hover:bg-red-200' : 'bg-red-300 text-white hover:bg-red-800') : 
                 (darkMode ? 'bg-black text-white hover:bg-white hover:text-black' : 'bg-white text-black hover:bg-black hover:text-white')
               }`}
             >
