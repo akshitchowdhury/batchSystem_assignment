@@ -30,20 +30,34 @@ const Navbar = ({ darkMode }) => {
                 <img src={"/assets/fire.svg"} alt="fire" className="mr-2" />
                 <p className={`text-${darkMode ? 'white' : 'black'} text-2xl font-bold`}>uifry</p>
               </div>
-          <div className={`hidden md:flex ml-10 space-x-8 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            <Link href="/" legacyBehavior onClick={() => handleClick(heroRef)}>
-              <a>Home</a>
-            </Link>
-            <Link href="/advantages" legacyBehavior onClick={() => handleClick(advantageRef)}>
-              <a>About Us</a>
-            </Link>
-            <Link href="/pricing" legacyBehavior onClick={() => handleClick(pricingRef)}>
-              <a>Pricing</a>
-            </Link>
-            <Link href="/features" legacyBehavior onClick={() => handleClick(featuresRef)}>
-              <a>Features</a>
-            </Link>
-          </div>
+              <div className={`hidden md:flex ml-10 space-x-8 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+  <Link href="/" legacyBehavior onClick={() => handleClick(heroRef)}>
+    <a className="relative group">
+      Home
+      <span className={`absolute left-0 bottom-0 
+      w-full h-[2px] transition-transform duration-300 ${darkMode ? 'bg-white' : 'bg-black'}
+       transform scale-x-0 group-hover:scale-x-100`}></span>
+    </a>
+  </Link>
+  <Link href="/advantages" legacyBehavior onClick={() => handleClick(advantageRef)}>
+    <a className="relative group">
+      About Us
+      <span className={`absolute left-0 bottom-0 w-full h-[2px] transition-transform duration-300 ${darkMode ? 'bg-white' : 'bg-black'} transform scale-x-0 group-hover:scale-x-100`}></span>
+    </a>
+  </Link>
+  <Link href="/pricing" legacyBehavior onClick={() => handleClick(pricingRef)}>
+    <a className="relative group">
+      Pricing
+      <span className={`absolute left-0 bottom-0 w-full h-[2px] transition-transform duration-300 ${darkMode ? 'bg-white' : 'bg-black'} transform scale-x-0 group-hover:scale-x-100`}></span>
+    </a>
+  </Link>
+  <Link href="/features" legacyBehavior onClick={() => handleClick(featuresRef)}>
+    <a className="relative group">
+      Features
+      <span className={`absolute left-0 bottom-0 w-full h-[2px] transition-transform duration-300 ${darkMode ? 'bg-white' : 'bg-black'} transform scale-x-0 group-hover:scale-x-100`}></span>
+    </a>
+  </Link>
+</div>
         </div>
         <div className="hidden md:flex">
           <button className={`${darkMode ? 'bg-white text-black' : 'bg-black text-white'} py-2 px-4 rounded`}>

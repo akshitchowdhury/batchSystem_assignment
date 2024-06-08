@@ -11,6 +11,7 @@ import Testimonial from "./components/Testomonial/Testimonial";
 import FreqAskQstn from "./components/FreqAskdQstn/FreqAskdQstn";
 import ReadyToGetStarted from "./components/ReadyToGetStarted/ReadyToGetStarted";
 import Footer from "./components/Footer/Footer";
+import Loading from "./components/Loading/Loading";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,8 +27,9 @@ export default function Home() {
     setDarkMode(!darkMode);
   };
 
-  if (!data) return <div>Loading...</div>;
-
+  if (!data) return (
+  <Loading/>
+  )
   return (
     <>
       <main

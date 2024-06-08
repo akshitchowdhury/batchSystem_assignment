@@ -15,7 +15,7 @@ const Advantages1 = ({ darkMode }) => {
     setIsLightboxOpen(false);
   };
 
-  // Close lightbox when clicking outside the image
+  // Closing the lightbox when clicking outside the image
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (event.target.id === 'lightbox') {
@@ -26,6 +26,7 @@ const Advantages1 = ({ darkMode }) => {
     window.addEventListener('click', handleOutsideClick);
     return () => window.removeEventListener('click', handleOutsideClick);
   }, []);
+
 
   useEffect(() => {
     AOS.init({ duration: 3000 });
@@ -59,7 +60,7 @@ const Advantages1 = ({ darkMode }) => {
         />
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal code which open up when image is clicked*/}
       <div id="lightbox" className={`fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 transition-opacity duration-300 ${isLightboxOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <div className="relative">
           <button onClick={closeLightbox} className="absolute top-2 right-2 text-white text-2xl">&times;</button>
