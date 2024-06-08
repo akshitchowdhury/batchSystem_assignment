@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <main
-        className={`min-h-screen w-full ${
+        className={`min-h-screen w-full overflow-clip ${
           darkMode ? "bg-zinc-800 transition ease-in-out duration-300" :
            "bg-cover bg-center transition ease-out duration-300"
         }`}
