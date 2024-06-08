@@ -4,8 +4,9 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
-  Button
 } from "@material-tailwind/react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Features = ({ darkMode }) => {
   const [features, setFeatures] = useState([]);
@@ -22,6 +23,11 @@ const Features = ({ darkMode }) => {
 
     fetchData();
   }, []);
+
+  // useEffect(() => {
+  //   AOS.init({ duration: 1000 });
+  //   AOS.refresh();
+  // }, []);
 
   const handleAccordionClick = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -49,7 +55,7 @@ const Features = ({ darkMode }) => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row p-4 md:p-8">
+    <div className="flex flex-col md:flex-row p-4 md:p-8" data-aos="fade-up">
       <div className="w-full md:w-1/2 flex justify-center md:justify-center mb-8 md:mb-0">
         <img
           src="/assets/features.svg"

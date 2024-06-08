@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HeroSection = ({ darkMode, data }) => {
   const { headline, subheadline, ctaButtons } = data.hero;
@@ -23,9 +25,13 @@ const HeroSection = ({ darkMode, data }) => {
     window.addEventListener('click', handleOutsideClick);
     return () => window.removeEventListener('click', handleOutsideClick);
   }, []);
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+    AOS.refresh();
+  }, []);
 
   return (
-    <div className="flex">
+    <div className="flex" data-aos="fade-up">
       <div className="md:justify-start lg:justify-start md:items-start lg:items-start text-center md:text-left lg:text-left w-full md:w-1/2 lg:w-1/2 justify-between items-center">
         <div className="flex flex-col">
           <div className="px-4 md:px-1 lg:px-6 py-3 lg:py-8 mt-8 md:mt-20 lg:mt-40 md:ml-16 lg:ml-28">

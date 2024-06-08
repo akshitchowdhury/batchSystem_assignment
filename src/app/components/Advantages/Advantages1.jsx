@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Advantages1 = ({ darkMode }) => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState('');
@@ -26,8 +27,13 @@ const Advantages1 = ({ darkMode }) => {
     return () => window.removeEventListener('click', handleOutsideClick);
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row" data-aos="fade-up">
       <div className="lg:w-1/2 flex flex-col justify-center py-8 px-7 lg:pl-32 lg:pr-24">
         <h3 className={`text-2xl ${darkMode ? 'text-white' : 'text-orange-500'}`}>ADVANTAGES</h3>
         <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold ${darkMode ? 'text-white' : ''}`}>Why Choose Uifry?</h1>
